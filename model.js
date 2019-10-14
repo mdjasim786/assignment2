@@ -26,7 +26,8 @@ apiTask.addUser = (data) => {                                                  /
 
 }
 
-apiTask.userDetail = (id) => {                                                    //get id(req.params.id) from  student_detail() in app.Controller.js
+apiTask.userDetail = (id) => {    
+    console.log(id)                                                //get id(req.params.id) from  student_detail() in app.Controller.js
     return new Promise((resolve, reject) => {
         sql.query('select * from  users where id=?', id, (err, res) => {
             if (err) {

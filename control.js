@@ -26,9 +26,10 @@ const apiTaskObject = {
 
     user_detail: async (req, res) => {
         let id = req.params.id;
+        console.log(id)
         try {
             let userRecord = await operation.userDetail(id);      
-            if (userrecord)
+            if (userRecord)
                 res.send(userRecord);
         } catch (error) {
             res.send(error);
