@@ -12,7 +12,7 @@ apiTask.userList = () => {
         });
     });
 }
-apiTask.addUser = (data) => {                                                  //get data(req.body) from  add_student() in app.Controller.js
+apiTask.addUser = (data) => {                                                  //get data(req.body) from  add_user() in control.js
     return new Promise((resolve, reject) => {
         sql.query('insert into users set ?', data, (err, res) => {
             if (err) {
@@ -41,7 +41,7 @@ apiTask.userDetail = (id) => {
     })
 }
 
-apiTask.updateDetail = (id, data, result) => {                                     //get id(req.params) and data(req.body) from  update_detail() in controller.js
+apiTask.updateDetail = (id, data, result) => {                                     //get id(req.params) and data(req.body) from  update_detail() in control.js
     return new Promise((resolve, reject) => {
         sql.query('update users set email=? ,phone=?, birthday=? where id=?', [data.email, data.phone, data.birthday, id], (err, res) => {
             if (err) {
