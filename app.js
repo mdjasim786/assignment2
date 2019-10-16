@@ -1,17 +1,19 @@
 const express = require('express');
 const app = express();
-const port = 4000;
-const routes = require('./routes/routing');
-//const sql = require('./db');
 const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+//const routes = require('./routes/routing');
+app.use(require('./routes/routing'));
+//const sql = require('./db');
 
+const port = 4000;
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use(bodyParser.json());      
-app.use('/adduser', routes);
-app.use('/users', routes);
+      
+//app.use('/adduser', routes);
+//app.use('/users', routes);
 
 
 module.exports = app;

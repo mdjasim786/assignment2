@@ -11,7 +11,7 @@
         "http"
     ],
     "paths": {
-        "/addUser": {
+        "/users/addUser": {
             "post": {
                 "description": "api for adding records of User ",
                 "consumes": [
@@ -35,7 +35,7 @@
                 }
             }
         },
-        "/users": {
+        "/users/userList": {
             "get": {
                 "description": "To display the users",
                 "responses": {
@@ -45,7 +45,7 @@
                 }
             }
         },
-        "/users/id": {
+        "/users/userList/id": {
             "get": {
             "operationId": "getUserById",
             "parameters":[
@@ -64,9 +64,10 @@
             "description": "Successfully fetched the records of users"
             }
             }
-            },
+            }
+        },
             
-         
+        "/users/deleteUser/id": { 
             "delete": {
                 "operationId": "getUserById",
                 "parameters":[
@@ -88,7 +89,7 @@
             }
         
         },
-        "/users/1": {
+        "/users/updateUser/2": {
             "put": {
                 "description": "Api for update",
                 "summary": "Update an existing student",
