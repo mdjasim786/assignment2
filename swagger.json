@@ -5,7 +5,7 @@
         "description": "apiTask operations",
         "title": "API for task create, read, update, delete"
     },
-    "host": "localhost:3000",
+    "host": "localhost:4000",
     "basePath": "/",
     "schemes": [
         "http"
@@ -45,13 +45,13 @@
                 }
             }
         },
-        "/users/{id}": {
+        "/users/id": {
             "get": {
             "operationId": "getUserById",
             "parameters":[
             {
             "name":"id",
-            "in":"path",
+            "in":"query",
             "type":"integer",
             "format":"int64"
             }
@@ -64,10 +64,21 @@
             "description": "Successfully fetched the records of users"
             }
             }
-            }
             },
-        "/users/3": {
+            
+         
             "delete": {
+                "operationId": "getUserById",
+                "parameters":[
+                {
+                "name":"id",
+                "in":"query",
+                "type":"integer",
+                "format":"int64"
+                }
+                
+                ],
+        
                 "description": "To delete the user Id records by id",
                 "responses": {
                     "200": {
@@ -75,6 +86,7 @@
                     }
                 }
             }
+        
         },
         "/users/1": {
             "put": {

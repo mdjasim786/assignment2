@@ -25,7 +25,7 @@ const apiTaskObject = {
     },
 
     user_detail: async (req, res) => {
-        let id = req.params.id;
+        let id = req.query.id;
         console.log(id)
         try {
             let userRecord = await operation.userDetail(id);      
@@ -37,7 +37,7 @@ const apiTaskObject = {
     },
 
     update_detail: async (req, res) => {
-        let id = req.params.id;
+        let id = req.query.id;
         let data = req.body;
         try {
             let updateRecord = await operation.updateDetail(id, data);    
@@ -49,7 +49,7 @@ const apiTaskObject = {
     },
 
     delete_user: async (req, res) => {
-        let id = req.params.id;
+        let id = req.query.id;
         try {
             let deleteRecord = await operation.deleteUser(id);      
             if (deleteRecord)
